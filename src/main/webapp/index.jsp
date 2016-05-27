@@ -88,16 +88,16 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
 %>
 <%
     ArrayList<String> photos = new ArrayList<String>();
-    photos.add( "LuisMamonaJoaoLama.jpg" );
-    photos.add( "JoseLuisFrancisco.jpg" );
-    photos.add( "MassungunaAlexAfonso.jpg" );
-    photos.add( "SebastiaoArsenioCabungula.jpg" );
-    photos.add( "HermenegildodaCosta.jpg" );
-    photos.add( "AderitoWaldemarAlvesdeCarvalho.jpg" );
-    photos.add( "FelisbertoSebastiaodaGracaAmaral.jpg" );
-    photos.add( "CarlosManuelGoncalvesAlonso.jpg" );
-    photos.add( "RicardoJobEstevao.jpg" );
-    photos.add( "FernandoAgostinhodaCosta.jpg" );
+    photos.add( "Antonio.png" );
+    photos.add( "Bastos.jpeg" );
+    photos.add( "ClintonMata.png" );
+    photos.add( "JonathanBuatu.png" );
+    photos.add( "Gilberto.png" );
+    photos.add( "AryPapel.png" );
+    photos.add( "Gelson.png" );
+    photos.add( "Job.png" );
+    photos.add( "Fredy.png" );
+    photos.add( "Mateus.png" );
     
     Class.forName("org.postgresql.Driver");
 //    String url = "jdbc:postgresql://" + Settings.getProperty("DB_HOST") + ":5432/RA71T026";
@@ -467,7 +467,7 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
                     <%
                     for( Integer i = 0; i < 5; i++ ) {
                         %>
-                        <div class="photo"><img src="img/<%= photos.get( i ) %>"></div>
+                        <div class="photo"><img src="img/<%= photos.get( photosOrder.get(i) - 1 ) %>"></div>
                         <%
                     }
                     %>
@@ -493,7 +493,7 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
                     <%
                     for( Integer i = 5; i < photosOrder.size(); i++ ) {
                         %>
-                        <div class="photo"><img src="img/<%= photos.get( i ) %>"></div>
+                        <div class="photo"><img src="img/<%= photos.get( photosOrder.get(i) - 1 ) %>"></div>
                         <%
                     }
                     %>
