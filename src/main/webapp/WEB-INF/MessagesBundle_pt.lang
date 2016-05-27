@@ -1,0 +1,182 @@
+# ComplainsDialog
+complainsComplainsList = Lista de queixas
+complainsAdd = Adicionar
+complainsChange = Modificar
+complainsOpen = Abrir
+complainsDelete = Excluir
+complainsSend = Enviar
+complainsReport = Relatório
+complainsExit = Saída
+complainsAddNewComplain = Adicionar uma nova denúncia
+complainsChangeSelectedComplain = Edite queixa Selecionado
+complainsOpenSelectedComplain = Ver queixa selecionado
+complainsDeleteSelectedComplain = Excluir a denúncia selecionado
+complainsSendSelectedComplain = Enviar denúncia selecionado de CET
+complainsCreateFullReport = Gerar um relatório contendo uma lista de todas as reclamações inscritas
+complainsFinish = Finalize reclamações
+complainsAdded = Adicionado
+complainsApplicant = Declarante
+complainsFile = Arquivo
+complainsElections = Eleições
+complainsSent = Enviado
+complainsContent = Conteúdo
+complainsResolution = Decisão
+complainsMark = Nota
+complainsChooseFileToSend = Selecione um arquivo para envio.
+complainsChooseCampaign = Escolha a campanha eleitoral
+complainsErrorReadingTable = Ao ler o erro ocorreu tabela %s.
+complainsErrorReadingValue = Ao ler o erro ocorreu %s.
+complainsErrorUnableCreateDirectory = Falha ao criar diretório %s
+complainsErrorCreatingDirectory = Quando você cria erro o diretório %s.
+complainsCopyingToDirectory = Copie o catálogo %s
+complainsFileAlreadyPrepared = Arquivo %s já está preparado para o embarque.
+complainsErrorSendingFile = Quando você envia ocorreu um erro de arquivo. Verifique se o arquivo a ser enviado.
+complainsComplainSending = Apresentação de uma queixa
+complainsErrorCreatingFile = Quando você cria um arquivo %s, ocorreu um erro.
+complainsChooseComplainToOpen = Selecione a queixa para visualizar.
+complainsComplainContent = A queixa
+complainsComplainAddition = Adição da queixa
+complainsComplainEditing = Edição de queixas
+complainsComplainNotFound = Abuso Encontrado
+complainsYes = Sim Eu Sou
+complainsNo = Não
+complainsComplainFileAlreadyExists = O arquivo de reclamação com o mesmo nome já está registrado. Substituí-lo?
+complainsComplainInputing = Entrando reclamações
+complainsSpecifyFirstAndLastName = Especifique o nome e sobrenome do candidato
+complainsFillRequiredFields = Preencha os campos obrigatórios
+complainsFillComplainContentOrScanIt = Especifique o conteúdo da denúncia ou digitalizá-lo
+complainsDateError = Erro na data
+complainsDateTimeCannotBeMoreThanCurrentDate = Data e hora de recebimento da denúncia não pode ser maior do que a data e hora atual
+complainsIncorrectDateOrTime = Data ou hora errada
+complainsScanningCompleted = A digitalização está concluída.
+complainsScanningComplain = Queixas de digitalização
+complainsNoDataForReport = Não há dados para relatar
+complainsNoData = Sem informação
+complainsUnknown = Não é definida
+complainsChooseComplainToDelete = Selecione uma queixa para remover
+complainsDeleteSelectedComplainQuestion = Eliminar selecção uma reclamação?
+complainsComplainDeletion = Remoção de queixas
+complainsErrorDeletingFile = Erro arquivo de exclusão
+complainsChooseComplainToEdit = Selecione uma queixa para editar
+complainsFiles = Arquivos
+# SaneWrapper
+complainsConfigurationFileErrorFieldNotFound = O arquivo de configuração não for encontrado o campo %s
+#complains = В конфигурационном файле не найдено поле OPEN_COMMAND
+complainsScanErrorFileNotCreated = Durante a verificação, ocorreu um erro. Registre uma reclamação não foi estabelecida.
+complainsScanError = Durante a verificação, ocorreu um erro.
+complainsErrorWhileOpening = Durante a abertura de um erro.
+# ColorProgressBar
+complainsTaskSentToScanner = A tarefa é enviada para o scanner
+# EditComplain
+complainsLastName = Apelido
+complainsFirstName = Nome
+complainsPatronymic = Patronímico
+complainsPermanentAddress = Endereço permanente
+complainsComplainType = Queixa
+complainsComplainTypeArea = Do local / da comissão
+complainsComplainTypeCampaign = Da campanha
+complainsAddDate = Data e hora de recebimento
+complainsManuallyAddComplain = Inserir o texto da queixa manualmente
+complainsScanComplain = Digitalizar a queixa
+complainsKeepExistingScan = Deixando a digitalização atual
+complainsCommissionResolution = Decisão da comissão
+complainsCompletionMark = Nota de execução
+complainsScanningInProgress = Aguarde, digitalização
+complainsOk = ОК
+complainsCancel = Cancelamento
+complainsError = Erro
+complainsErrorWorkingWithComplainsTable = Quando se refere a tabela complains, houve um erro
+complainsEnterDateInFormat = Especifique a data e hora do recebimento da denúncia no formato dd.mm.yyyy HH: mm
+complainsWrongDate = Data incorreta
+complainsSaveComplain = Salvar queixa
+complainsCancelComplainSaving = Anular as queixas entrada
+#
+# ARM TIK
+#
+# java
+# Admin.java
+tikAllDataDeleted = Todos os dados do curso de voto e eleição resultados removido
+tikErrorDeletingData = Quando você exclui ocorreu um erro de dados: %s
+tikAllDataWillBeDeleted = Todos os dados no decurso da votação e os resultados das eleições serão excluídos.
+tikAreYouShure = Tem certeza que?
+tikClickDeleteButtonToDelete = Para excluir todos os dados do curso da votação e dos resultados das eleições, aperte o botão \"Excluir dados\"
+tikDeleteData = Excluir dados
+tikDataDeletion = A eliminação de dados
+tikYes = Sim Eu Sou
+tikNo = Não
+#
+# ExchangeController.java
+tikLoded = carregado.
+tikDeleted = removido.
+tikErrorLoadingMessage = Processamento de mensagens de erro:
+tikMessage = Mensagem
+tikErrorClass = Classe
+tikErrorMessage = Erro
+tikErrorFullText = O texto completo
+tikAreaNumber = Número do CEL
+tikMessageParameters = Opções de Mensagens
+#
+# MsgFilesWork.java
+tikESCheckProtocol = Protocolo para verificar a validade das assinaturas electrónicas membros CEL
+tikPosition = Cargo
+tikDate = Data
+tikResult = O Resultado
+tikGroupOfControlMembers = Os membros do grupo de controlo
+tikSignature = Assinatura
+tikAppTitle = Estação automatizada da CET
+tikNoSignature = assinatura está ausente
+#
+# view.jsp
+tikReceivedMessages = Mensagens recebidas
+#
+# webapp
+#
+# index.jsp
+tikTitle = Estação automatizada da CET
+tikVotingResults = Resultados da votação
+tikVotingProcess = Curso da votação
+tikTikProtocol = Acta final
+tikSummaryTable = Tabela de síntese
+tikDetails = Mais detalhes
+tikUIK = CEL
+tikTIK = CET
+tikTIKSummaryInformation = Informação resumida da CET
+tikNoData = Sem informação
+tikMonth01 = janeiro
+tikMonth02 = fevereiro
+tikMonth03 = março
+tikMonth04 = abril
+tikMonth05 = maio
+tikMonth06 = junho
+tikMonth07 = julho
+tikMonth08 = agosto
+tikMonth09 = setembro
+tikMonth10 = outubro
+tikMonth11 = novembro
+tikMonth12 = dezembro
+#
+# sidebar.jsp
+tikTurnout = Comparecimento <br /> de eleitores
+tikProcessedProtocols = Actas  <br /> processadas
+#
+# footer.jsp
+tikHoldingCampaign = Realização da campanha
+tikChangingCampaign = Mudança da campanha
+tikLoadingUIKData = Carregamento dos dados da CEL
+tikAdministration = Administração
+#
+# campaigns_view.jsp
+tikCampaignsList = Lista das campanhas eleitorais
+#
+# view.jsp
+tikIncomingMessages = Mensagens recebidas
+tikProcess = Processo
+tikDelete = Excluir
+tikLoad = Para Carregar
+tikSkip = Passar
+tikPrint1 = Impressão1
+tikPrint2 = Impressão2
+tikViewMessage = Ver mensagens
+tikFormed = Formado
+tikFIO = Nome completo
+tikSignatureIsValid = Assinatura é válida

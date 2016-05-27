@@ -1,0 +1,181 @@
+# ComplainsDialog
+complainsComplainsList = Список жалоб
+complainsAdd = Добавить
+complainsChange = Изменить
+complainsOpen = Открыть
+complainsDelete = Удалить
+complainsSend = Переслать
+complainsReport = Отчёт
+complainsExit = Выход
+complainsAddNewComplain = Добавить новую жалобу
+complainsChangeSelectedComplain = Изменить выбранную жалобу
+complainsOpenSelectedComplain = Просмотреть выбранную жалобу
+complainsDeleteSelectedComplain = Удалить выбранную жалобу
+complainsSendSelectedComplain = Переслать выбранную жалобу в ТИК
+complainsCreateFullReport = Сформировать отчёт, содержащий перечень всех введённых жалоб
+complainsFinish = Завершить работу с жалобами
+complainsAdded = Добавлено
+complainsApplicant = Заявитель
+complainsFile = Файл
+complainsElections = Выборы
+complainsSent = Отправлено
+complainsContent = Содержание
+complainsResolution = Решение
+complainsMark = Отметка
+complainsChooseFileToSend = Выберите файл для пересылки.
+complainsChooseCampaign = Выберите избирательную кампанию
+complainsErrorReadingTable = При чтении таблицы %s произошла ошибка.
+complainsErrorReadingValue = При чтении %s произошла ошибка.
+complainsErrorUnableCreateDirectory = Не удалось создать каталог %s
+complainsErrorCreatingDirectory = При создании каталога %s произошла ошибка.
+complainsCopyingToDirectory = Копируем в каталог %s
+complainsFileAlreadyPrepared = Файл %s уже подготовлен к пересылке.
+complainsErrorSendingFile = При отправке файла произошла ошибка. Проверьте наличие отправляемого файла.
+complainsComplainSending = Отправка жалобы
+complainsErrorCreatingFile = При создании файла %s произошла ошибка.
+complainsChooseComplainToOpen = Выберите жалобу для просмотра.
+complainsComplainContent = Содержание жалобы
+complainsComplainAddition = Добавление жалобы
+complainsComplainEditing = Редактирование жалобы
+complainsComplainNotFound = Жалоба не найдена
+complainsYes = Да
+complainsNo = Нет
+complainsComplainFileAlreadyExists = Жалоба с таким именем файла уже зарегистрирована. Заменить её?
+complainsComplainInputing = Ввод жалобы
+complainsSpecifyFirstAndLastName = Укажите фамилию и имя заявителя
+complainsFillRequiredFields = Заполните обязательные поля
+complainsFillComplainContentOrScanIt = Укажите содержание жалобы или отсканируйте её
+complainsDateError = Ошибка в дате
+complainsDateTimeCannotBeMoreThanCurrentDate = Дата и время поступления жалобы не могут быть больше текущих даты и времени
+complainsIncorrectDateOrTime = Неверная дата или время
+complainsScanningCompleted = Сканирование завершено.
+complainsScanningComplain = Сканирование жалобы
+complainsNoDataForReport = Нет данных для отчёта
+complainsNoData = Нет данных
+complainsUnknown = Не определён
+complainsChooseComplainToDelete = Выберите жалобу для удаления.
+complainsDeleteSelectedComplainQuestion = Удалить выбранную жалобу?
+complainsComplainDeletion = Удаление жалобы
+complainsErrorDeletingFile = Ошибка при удалении файла
+complainsChooseComplainToEdit = Выберите жалобу для редактирования
+complainsFiles = Файлы
+# SaneWrapper
+complainsConfigurationFileErrorFieldNotFound = В конфигурационном файле не найдено поле %s
+#complains = В конфигурационном файле не найдено поле OPEN_COMMAND
+complainsScanErrorFileNotCreated = Во время сканирования произошла ошибка. Файл с жалобой не сформирован.
+complainsScanError = Во время сканирования произошла ошибка.
+complainsErrorWhileOpening = Во время открытия произошла ошибка.
+# ColorProgressBar
+complainsTaskSentToScanner = Задание отправлено на сканер
+# EditComplain
+complainsLastName = Фамилия
+complainsFirstName = Имя
+complainsPatronymic = Отчество
+complainsPermanentAddress = Адрес места жительства
+complainsComplainType = Жалоба
+complainsComplainTypeArea = По участку/комиссии
+complainsComplainTypeCampaign = По кампании
+complainsAddDate = Дата и время поступления
+complainsManuallyAddComplain = Ввести текст жалобы вручную
+complainsScanComplain = Сканировать жалобу
+complainsKeepExistingScan = Оставить имеющийся скан
+complainsCommissionResolution = Решение комиссии
+complainsCompletionMark = Отметка об исполнении
+complainsScanningInProgress = Подождите, идёт сканирование
+complainsOk = ОК
+complainsCancel = Отмена
+complainsError = Ошибка
+complainsErrorWorkingWithComplainsTable = При обращении к таблице complains произошла ошибка
+complainsEnterDateInFormat = Укажите дату и время поступления жалобы в формате dd.MM.yyyy HH:mm
+complainsWrongDate = Неверная дата
+complainsSaveComplain = Сохранить жалобу
+complainsCancelComplainSaving = Отменить ввод жалобы
+#
+# ARM TIK
+#
+# java
+# Admin.java
+tikAllDataDeleted = Все данные по ходу голосования и итогам выборов удалены
+tikErrorDeletingData = При удалении данных произошла ошибка: %s
+tikAllDataWillBeDeleted = Все данные по ходу голосования и итогам выборов будут удалены.
+tikAreYouShure = Вы уверены?
+tikClickDeleteButtonToDelete = Для удаления всех данных по ходу голосования и итогам выборов нажмите кнопку \"Удалить данные\"
+tikDeleteData = Удалить данные
+tikDataDeletion = Удаление данные
+tikYes = Да
+tikNo = Нет
+#
+# ExchangeController.java
+tikLoded = загружено.
+tikDeleted = удалено.
+tikErrorLoadingMessage = Ошибка обработки сообщения: 
+tikMessage = Сообщение 
+tikErrorClass = Класс
+tikErrorMessage = Ошибка
+tikErrorFullText = Полный текст
+tikAreaNumber = Номер участка
+tikMessageParameters = Параметры сообщения
+#
+# MsgFilesWork.java
+tikESCheckProtocol = Протокол проверки действительности электронных подписей членов УИК
+tikPosition = Должность
+tikDate = Дата
+tikResult = Результат
+tikGroupOfControlMembers = Члены группы контроля
+tikSignature = Подпись
+tikAppTitle = АРМ ТИК
+tikNoSignature = подпись отсутствует
+#
+# view.jsp
+tikReceivedMessages = Пришедшие сообщения
+#
+# webapp
+#
+# index.jsp
+tikVotingResults = Результаты голосования
+tikVotingProcess = Ход голосования
+tikTikProtocol = Итоговый протокол
+tikSummaryTable = Сводная таблица
+tikDetails = Подробно
+tikUIK = УИК
+tikTIK = ТИК
+tikTIKSummaryInformation = Сводная информация по ТИК
+tikNoData = Нет данных
+tikMonth01 = января
+tikMonth02 = февраля
+tikMonth03 = марта
+tikMonth04 = апреля
+tikMonth05 = мая
+tikMonth06 = июня
+tikMonth07 = июля
+tikMonth08 = августа
+tikMonth09 = сентября
+tikMonth10 = октября
+tikMonth11 = ноября
+tikMonth12 = декабря
+#
+# sidebar.jsp
+tikTurnout = Явка <br /> избирателей
+tikProcessedProtocols = Обработанные <br /> протоколы
+#
+# footer.jsp
+tikHoldingCampaign = Проведение кампании
+tikChangingCampaign = Смена кампании
+tikLoadingUIKData = Загрузка данных из УИК
+tikAdministration = Администрирование
+#
+# campaigns_view.jsp
+tikCampaignsList = Список избирательных кампаний
+#
+# view.jsp
+tikIncomingMessages = Пришедшие сообщения
+tikProcess = Обработать
+tikDelete = Удалить
+tikLoad = Загрузить
+tikSkip = Пропустить
+tikPrint1 = Печать1
+tikPrint2 = Печать2
+tikViewMessage = Просмотр сообщения
+tikFormed = Сформирован
+tikFIO = ФИО
+tikSignatureIsValid = A assinatura é válida

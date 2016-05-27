@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+		<title>jQuery.mmenu - Demo</title>
+
+		<link type="text/css" rel="stylesheet" href="css/demo.css" />
+		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+		<style type="text/css">
+			.content
+			{
+				padding-top: 0;
+			}
+			#intro,
+			#first,
+			#second,
+			#third
+			{
+				height: 350px;
+				padding-top: 190px;
+			}
+			#first,
+			#second,
+			#third
+			{
+				border-top: 1px solid #ccc;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var $menu = $('nav#menu'),
+					$html = $('html, body');
+
+				$menu
+					.mmenu()
+					.find( 'a' )
+					.on( 'click',
+						function()
+						{
+							var href = $(this).attr( 'href' );
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);
+						}
+					)
+					.end()
+					.find( 'li' )
+					.first()
+					.trigger( 'setSelected' );
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<div class="header FixedTop">
+				<a href="#menu"></a>
+				Demo 2
+			</div>
+			<div class="content">
+				<div id="intro">					
+					<p><strong>This is a demo.</strong><br />
+						Click the menu icon to open the menu.</p>
+					
+					<p>The links in the menu link to a section on the same page, some small javascript makes the page scroll smoothly.</p>
+				</div>
+				<div id="first">
+					<p><strong>This is the first section.</strong><br />
+						Notice how the fixed header and footer slide out along with the page.</p>
+
+					<p><a href="#menu">Open the menu.</a></p>
+				</div>
+				<div id="second">
+					<p><strong>This is the second section.</strong><br />
+						<a href="#menu">Open the menu.</a></p>
+				</div>
+				<div id="third">
+					<p><strong>This is the third section.</strong><br />
+						<a href="#menu">Open the menu.</a></p>
+				</div>
+			</div>
+		</div>
+		<nav id="menu">
+			<ul>
+				<li><a href="/">Проведение кампании</a></li>
+				<li><a href="#first">First section</a></li>
+				<li><a href="#second">Second section</a></li>
+				<li><a href="#third">Third section</a></li>
+			</ul>
+		</nav>
+	</body>
+</html>
