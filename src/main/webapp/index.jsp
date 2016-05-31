@@ -20,6 +20,7 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="ru.voskhod.loc.i18n"%>
+<%@ page import="java.nio.file.Path" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="header.jsp"%>
 
@@ -79,7 +80,8 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
     // Шаблон сводной таблицы
     String summaryTableTemplate = "";
     if(isTIK) {
-        List<String> summaryTableLines = Files.readAllLines(Paths.get(getServletContext().getRealPath("html/SummaryTable_" + Settings.getProperty("LANGUAGE") + ".html")), StandardCharsets.UTF_8);
+        Path path =Paths.get(getServletContext().getRealPath("/html/SummaryTable_" + Settings.getProperty("LANGUAGE") + ".html"));
+        List<String> summaryTableLines = Files.readAllLines(path, StandardCharsets.UTF_8);
 
         for( String s: summaryTableLines) {
             summaryTableTemplate += s;
@@ -88,16 +90,16 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
 %>
 <%
     ArrayList<String> photos = new ArrayList<String>();
-    photos.add( "Antonio.png" );
-    photos.add( "Bastos.jpeg" );
-    photos.add( "ClintonMata.png" );
-    photos.add( "JonathanBuatu.png" );
-    photos.add( "Gilberto.png" );
-    photos.add( "AryPapel.png" );
-    photos.add( "Gelson.png" );
-    photos.add( "Job.png" );
-    photos.add( "Fredy.png" );
-    photos.add( "Mateus.png" );
+    photos.add( "LuisMamonaJoaoLama.jpg" );
+    photos.add( "JoseLuisFrancisco.jpg" );
+    photos.add( "MassungunaAlexAfonso.jpg" );
+    photos.add( "SebastiaoArsenioCabungula.jpg" );
+    photos.add( "HermenegildodaCosta.jpg" );
+    photos.add( "AderitoWaldemarAlvesdeCarvalho.jpg" );
+    photos.add( "FelisbertoSebastiaodaGracaAmaral.jpg" );
+    photos.add( "CarlosManuelGoncalvesAlonso.jpg" );
+    photos.add( "RicardoJobEstevao.jpg" );
+    photos.add( "FernandoAgostinhodaCosta.jpg" );
     
     Class.forName("org.postgresql.Driver");
 //    String url = "jdbc:postgresql://" + Settings.getProperty("DB_HOST") + ":5432/RA71T026";
@@ -322,9 +324,9 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
     if (isTIK) {
         // Шаблон протокола ТИК
         %>
-            console.info( "<%=Paths.get(getServletContext().getRealPath("html/TikProtocol_" + Settings.getProperty("LANGUAGE") + ".html")).toString().replace("\\", "\\\\")%>" );
+            console.info( "<%=Paths.get(getServletContext().getRealPath("/html/TikProtocol_" + Settings.getProperty("LANGUAGE") + ".html")).toString().replace("\\", "\\\\")%>" );
         <%
-        List<String> protocolLines = Files.readAllLines(Paths.get(getServletContext().getRealPath("html/TikProtocol_" + Settings.getProperty("LANGUAGE") + ".html")), StandardCharsets.UTF_8);
+        List<String> protocolLines = Files.readAllLines(Paths.get(getServletContext().getRealPath("/html/TikProtocol_" + Settings.getProperty("LANGUAGE") + ".html")), StandardCharsets.UTF_8);
         for( String s: protocolLines) {
             protocolTemplate += s;
         }
