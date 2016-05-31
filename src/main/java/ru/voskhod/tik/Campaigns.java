@@ -34,17 +34,14 @@ public class Campaigns extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //response.setContentType("text/html;charset=UTF-8");
-        /*
-        try (PrintWriter out = response.getWriter()) {
-            out.println("START");
-            for (Enumeration<String> e = request.getParameterNames(); e.hasMoreElements();) {
-                out.println(e.nextElement());
-            }
-            
-            out.println("END");
+
+        String newVrnvibref = request.getParameter("vrnvibref");
+        if(newVrnvibref != null) {
+            setVrnvibref(request, response, newVrnvibref);
+            return;
         }
-        */
+
+
         request.setAttribute("campaignID", request.getParameter("campaignID") );
         request.getRequestDispatcher("/campaigns_view.jsp").forward(request, response);
         
@@ -54,23 +51,14 @@ public class Campaigns extends HttpServlet {
             //Logger.getLogger(Campaigns.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }
-        /*
-        try (PrintWriter out = response.getWriter()) {
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet Protocol</title>");            
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet Protocol at " + request.getContextPath() + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
-        }
-        */
-
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    private void setVrnvibref(HttpServletRequest request, HttpServletResponse response, String newVrnvibref) throws ServletException, IOException {
+        request.getSession().setAttribute("vrnvibref", newVrnvibref);
+        // TODO: определять корневой URL
+        response.sendRedirect("index.jsp");
+    }
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -107,6 +95,6 @@ public class Campaigns extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

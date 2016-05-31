@@ -416,13 +416,13 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
 %>
 
             var barChartRealData = {
-                labels : [<%= persons.getLabels(0, 4) %>],
+                labels : [<%= persons.getLabels(0, 2) %>],
                 datasets : [{
                     fillColor : "rgba(151,187,205,0.5)",
                     strokeColor : "rgba(151,187,205,0.8)",
                     highlightFill : "rgba(151,187,205,0.75)",
                     highlightStroke : "rgba(151,187,205,1)",
-                    data : [<%= persons.getVotes(0, 4) %>]
+                    data : [<%= persons.getVotes(0, 2) %>]
                     }]
             }
 
@@ -467,7 +467,7 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
             <div class="wrapper_center">
                 <div id="photos">
                     <%
-                    for( Integer i = 0; i < 5; i++ ) {
+                    for( Integer i = 0; i < 3; i++ ) {
                         %>
                         <div class="photo"><img src="img/<%= photos.get( photosOrder.get(i) - 1 ) %>"></div>
                         <%
@@ -477,31 +477,6 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
                 </div>
             </div>
 
-            <canvas id="canvas2" height="400" width="900"></canvas>
-            <script>
-            var barChartRealData2 = {
-                labels : [<%= persons.getLabels(5, 9) %>],
-                datasets : [{
-                    fillColor : "rgba(151,187,205,0.5)",
-                    strokeColor : "rgba(151,187,205,0.8)",
-                    highlightFill : "rgba(151,187,205,0.75)",
-                    highlightStroke : "rgba(151,187,205,1)",
-                    data : [<%= persons.getVotes(5, 9) %>]
-                    }]
-            }
-            </script>
-            <div class="wrapper_center">
-                <div id="photos2">
-                    <%
-                    for( Integer i = 5; i < photosOrder.size(); i++ ) {
-                        %>
-                        <div class="photo"><img src="img/<%= photos.get( photosOrder.get(i) - 1 ) %>"></div>
-                        <%
-                    }
-                    %>
-                        <span class="stretch"></span>
-                </div>
-            </div>
             <div id="uik">
                 <ul>
                 <% if (uikNumber == null) {%>
@@ -568,7 +543,6 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
 
             window.onload = function(){
                 var myBar1 = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartRealData, options);
-                var myBar2 = new Chart(document.getElementById("canvas2").getContext("2d")).Bar(barChartRealData2, options);
                 var myBar3 = new Chart(document.getElementById("canvas_turnout").getContext("2d")).Bar(barChartTurnoutData, turnoutOptions);
             }
             </script>

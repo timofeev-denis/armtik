@@ -3,11 +3,13 @@
                 <div class="campaigns">
                     <h1 class="page_title"><%=i18n.getString("tikCampaignsList")%>:</h1>
                     <ul>
-                        <li><div class="campaigns_icon"></div><a href="${pageContext.request.contextPath}"><%=electionName%></a></li>
+                        <li><div class="campaigns_icon"></div><a href="${pageContext.request.pathInfo}?vrnvibref=462401515484839">A Eleição "Candidato presidencial"</a></li>
+                        <li><div class="campaigns_icon"></div><a href="${pageContext.request.pathInfo}?vrnvibref=562401515484839">Eleição "Lista"</a></li>
+                        <li><div class="campaigns_icon"></div><a href="${pageContext.request.pathInfo}?vrnvibref=662401515484839">Eleição "Ratificação"</a></li>
                     </ul>
                 </div>
                 <!--
-                ${campaignID}
+<%=request.getAttribute("javax.servlet.forward.request_uri").toString()%>
                 <div id="intro">					
                         <p><strong>This is a demo.</strong><br />
                                 Click the menu icon to open the menu.</p>

@@ -31,7 +31,7 @@
             %>
             $(function() {
                 var $menu = $('nav#menu');
-					
+
                 $menu.mmenu({
                     dragOpen: true,
                     footer: {
@@ -40,7 +40,7 @@
                         content: "<%=i18n.getString("tikAppTitle")%> 1.1"
                     }
                 });
-                
+
                 $menu.find( 'li > a' ).click(function() {
                     console.log( 'click ' + $(this).data('url') );
                     setTimeout( "window.location = '" + $(this).data('url') + "';", 300 );
@@ -58,7 +58,7 @@
                         active_block = 2;
                         break;
                 }
-                
+
                 $( "#accordion" ).accordion({
                     heightStyle: "content",
                     active : active_block
@@ -85,13 +85,14 @@
         %>
             console.error( "Создание подключения: " + "<%= ex.getMessage() %>");
         <%
-    } 
+    }
     // Результаты голосования
     ResultSet rs = null;
     //String vrnvibref = "4714026159790";   // старые выборы
     String vrnvibref = "462401515484839";   // Эбола
     //String campaignName = "";
     String electionName = "";
+    out.print(session.getAttribute("vrnvibref"));
     try {
         rs = st.executeQuery("select namvibor FROM voshod.viboryrefer WHERE vrn=" + vrnvibref);
         rs.next();
@@ -104,7 +105,7 @@
         <%
     }
 %>
-                    
+
             </div>
             <div class="content">
 <!-- /HEADER -->

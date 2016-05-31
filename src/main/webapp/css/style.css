@@ -196,9 +196,11 @@ div.content ul, div.content p {
 div.content ul li {
     list-style-position:inside;
     line-height:25px;
+    clear: both;
 }
 div.content ul li a {
     color:#555555;
+    float: left;
 }
 code {
     overflow:auto;
