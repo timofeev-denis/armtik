@@ -467,17 +467,6 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
                 </div>
             </div>
 
-            <div id="uik">
-                <ul>
-                <% if (uikNumber == null) {%>
-                    <li><%=i18n.getString("tikDetails")%>: </li>
-                    <li><a href="?vrntvd=<%=uikvrn1 %>&uikNumber=5001#results"><%=i18n.getString("tikUIK")%> №5001</a></li>
-                    <li><a href="?vrntvd=<%=uikvrn2 %>&uikNumber=5004#results"><%=i18n.getString("tikUIK")%> №5004</a></li>
-                <% } else { %>
-                    <li><a href="${pageContext.request.contextPath}#results"><%=i18n.getString("tikTIKSummaryInformation")%></a></li>
-                <% } %>
-                </ul>
-            </div>
         </div>
     </div>
     <h3><%=i18n.getString("tikVotingProcess")%></h3>
@@ -536,17 +525,7 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
                 var myBar3 = new Chart(document.getElementById("canvas_turnout").getContext("2d")).Bar(barChartTurnoutData, turnoutOptions);
             }
             </script>
-            <div id="uik">
-                <ul>
-                <% if (uikNumber == null) {%>
-                    <li><%=i18n.getString("tikDetails")%>: </li>
-                    <li><a href="?vrntvd=<%=uikvrn1 %>&uikNumber=5001#turnout"><%=i18n.getString("tikUIK")%> №5001</a></li>
-                    <li><a href="?vrntvd=<%=uikvrn2 %>&uikNumber=5004#turnout"><%=i18n.getString("tikUIK")%> №5004</a></li>
-                <% } else { %>
-                    <li><a href="${pageContext.request.contextPath}#turnout"><%=i18n.getString("tikTIKSummaryInformation")%></a></li>
-                <% } %>
-                </ul>
-            </div>
+
         </div>
     </div>
     <h3><%=i18n.getString("tikTikProtocol")%></h3>
@@ -571,16 +550,7 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
             </ul>                
         </div>
     </div>
-    <% if(isTIK) {%>
-    <h3><%=i18n.getString("tikSummaryTable")%></h3>
-    <div>
-        <center>
-            <%= summaryTableTemplate %>
-        </center>
-    </div>
-    <% } else { %>
-    <!-- ********* УИК ******* -->
-    <% } %>
+
 </div> 
 <%
 request.setAttribute("showTurnout", "1");
