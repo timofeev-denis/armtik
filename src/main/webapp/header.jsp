@@ -103,16 +103,12 @@
     if( vrntvd == null ) {
 //        vrntvd = "462401515484844";
 //        vrntvd = "562401515484844"; -- другие выборы для Эбола
-        try {
-            rs = st.executeQuery("select vrn FROM voshod.tvd WHERE vrnvibref=" + vrnvibref + " and vidtvd='0'");
-            rs.next();
-            vrntvd = rs.getString(1);
-        }catch(SQLException ex) {
-            %>
-                <script>
-                console.log( "ERROR: <%=ex.getMessage()%>" );
-                </script>
-            <%
+        if(vrnvibref.equals("462401515484839")) {
+            vrntvd = "462401515484844";
+        } else if(vrnvibref.equals("562401515484839")) {
+            vrntvd = "562401515484844";
+        } else if(vrnvibref.equals("662401515484839")) {
+            vrntvd = "662401515484844";
         }
         isTIK = true;
     } else {
