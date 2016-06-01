@@ -89,10 +89,38 @@
     // Результаты голосования
     ResultSet rs = null;
     //String vrnvibref = "4714026159790";   // старые выборы
-    String vrnvibref = "462401515484839";   // Эбола
+    String vrnvibref = (String) request.getSession().getAttribute("vrnvibref");
+    if (vrnvibref == null) {
+        vrnvibref = "462401515484839";   // Эбола
+        request.getSession().setAttribute("vrnvibref", vrnvibref);
+    }
+
     //String campaignName = "";
     String electionName = "";
-    out.print(session.getAttribute("vrnvibref"));
+    String vrntvd = "";
+    vrntvd = request.getParameter("vrntvd");
+    boolean isTIK = false;
+    if( vrntvd == null ) {
+//        vrntvd = "462401515484844";
+//        vrntvd = "562401515484844"; -- другие выборы для Эбола
+        try {
+            rs = st.executeQuery("select vrn FROM voshod.tvd WHERE vrnvibref=" + vrnvibref + " and vidtvd='0'");
+            rs.next();
+            vrntvd = rs.getString(1);
+        }catch(SQLException ex) {
+            %>
+                <script>
+                console.log( "ERROR: <%=ex.getMessage()%>" );
+                </script>
+            <%
+        }
+        isTIK = true;
+    } else {
+    }
+
+
+
+    //out.print(request.getSession().getAttribute("vrnvibref"));
     try {
         rs = st.executeQuery("select namvibor FROM voshod.viboryrefer WHERE vrn=" + vrnvibref);
         rs.next();

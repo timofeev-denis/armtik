@@ -40,7 +40,9 @@
     String uikvrn1 = "462401515484945";
     String uikvrn2 = "462401515484946";
     String vrnsved = "462401515484947";
-    
+//    String vrnsved = "562401515484947";
+//    String vrnsved = "662401515484947";
+
     //String vrnvibref = "4714026159790";
     //String vrnvibref = "462401515484839";
     /*
@@ -55,20 +57,8 @@ select
 vrn in (select vrn from voshod.pg where vrntvd=462401515484844 and numver=0)
 and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 and katsv='0' and numsved=1));
     */
-    String vrntvd = request.getParameter("vrntvd");
-    boolean isTIK = false;
-    if( vrntvd == null ) {
-        //vrntvd = "4714026159795";
-        vrntvd = "462401515484844";
-        isTIK = true;
-        %>
-        console.info( "Это ТИК" );    
-        <%
-    } else {
-        %>
-        console.info( "Это УИК" );    
-        <%
-    }
+
+
     String uikNumber = request.getParameter("uikNumber");
     if( uikNumber == null ) {
         pageContext.setAttribute("commissionName", i18n.getString("tikTIK") + " 71T026");
