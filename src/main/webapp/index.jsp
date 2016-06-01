@@ -39,7 +39,7 @@
 <%
     String uikvrn1 = "462401515484945";
     String uikvrn2 = "462401515484946";
-    String vrnsved = "462401515484947";
+//    String vrnsved = "462401515484947";
 //    String vrnsved = "562401515484947";
 //    String vrnsved = "662401515484947";
 
@@ -314,9 +314,10 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
     if (isTIK) {
         // Шаблон протокола ТИК
         %>
-            console.info( "<%=Paths.get(getServletContext().getRealPath("/html/TikProtocol_" + Settings.getProperty("LANGUAGE") + ".html")).toString().replace("\\", "\\\\")%>" );
+            console.info( "<%=Paths.get(getServletContext().getRealPath("/html/TikProtocol_" + Settings.getProperty("LANGUAGE") + "_" + vrnvibref + ".html")).toString().replace("\\", "\\\\")%>" );
         <%
-        List<String> protocolLines = Files.readAllLines(Paths.get(getServletContext().getRealPath("/html/TikProtocol_" + Settings.getProperty("LANGUAGE") + ".html")), StandardCharsets.UTF_8);
+
+        List<String> protocolLines = Files.readAllLines(Paths.get(getServletContext().getRealPath("/html/TikProtocol_" + Settings.getProperty("LANGUAGE") + "_" + vrnvibref + ".html")), StandardCharsets.UTF_8);
         for( String s: protocolLines) {
             protocolTemplate += s;
         }
@@ -538,17 +539,7 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
             %>
             <%= protocolTemplate %>
         </center>
-        <div id="uik">
-            <ul>
-            <% if (uikNumber == null) {%>
-                <li><%=i18n.getString("tikDetails")%>: </li>
-                <li><a href="?vrntvd=<%=uikvrn1 %>&uikNumber=5001#protocol"><%=i18n.getString("tikUIK")%> №5001</a></li>
-                <li><a href="?vrntvd=<%=uikvrn2 %>&uikNumber=5005#protocol"><%=i18n.getString("tikUIK")%> №5004</a></li>
-            <% } else { %>
-                <li><a href="${pageContext.request.contextPath}#protocol"><%=i18n.getString("tikTIKSummaryInformation")%></a></li>
-            <% } %>
-            </ul>                
-        </div>
+
     </div>
 
 </div> 

@@ -98,17 +98,19 @@
     //String campaignName = "";
     String electionName = "";
     String vrntvd = "";
+    String vrnsved = "";
     vrntvd = request.getParameter("vrntvd");
     boolean isTIK = false;
     if( vrntvd == null ) {
-//        vrntvd = "462401515484844";
-//        vrntvd = "562401515484844"; -- другие выборы для Эбола
         if(vrnvibref.equals("462401515484839")) {
             vrntvd = "462401515484844";
+            vrnsved = "462401515484947";
         } else if(vrnvibref.equals("562401515484839")) {
             vrntvd = "562401515484844";
+            vrnsved = "562401515484947";
         } else if(vrnvibref.equals("662401515484839")) {
             vrntvd = "662401515484844";
+            vrnsved = "662401515484947";
         }
         isTIK = true;
     } else {
