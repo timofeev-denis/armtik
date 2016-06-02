@@ -18,6 +18,8 @@ public class Settings {
     private static String language = "";
     private static String electionsName = "";
     private static String vrnvibref = "";
+    private static String vrnvibref2 = "";
+    private static String vrnvibref3 = "";
     private static String dbEncoding = "";
 
     public static void init(ServletContext context) {
@@ -46,6 +48,8 @@ public class Settings {
                 prop.setProperty("PATH_MSG_ARCHIVE", "/opt/uik_data/tik/archive");
                 prop.setProperty("LANGUAGE", "ru");
                 prop.setProperty("VRNVIBREF", "462401515484839");
+                prop.setProperty("VRNVIBREF2", "562401515484839");
+                prop.setProperty("VRNVIBREF3", "662401515484839");
                 prop.setProperty("DB_ENCODING", "");
                 prop.store(new FileOutputStream(filePath), "TIK settings");
             }
@@ -61,6 +65,8 @@ public class Settings {
             language = prop.getProperty("LANGUAGE");
             electionsName = prop.getProperty("ELECTIONS_NAME");
             vrnvibref = prop.getProperty("VRNVIBREF");
+            vrnvibref2 = prop.getProperty("VRNVIBREF2");
+            vrnvibref3 = prop.getProperty("VRNVIBREF3");
             dbEncoding = prop.getProperty("DB_ENCODING");
         } catch (Exception ex) {
             System.out.println("Error reading " + settingsFileName + ": " + ex.getMessage());
@@ -84,6 +90,10 @@ public class Settings {
                 return electionsName;
             case "VRNVIBREF":
                 return vrnvibref;
+            case "VRNVIBREF2":
+                return vrnvibref2;
+            case "VRNVIBREF3":
+                return vrnvibref3;
             case "DB_ENCODING":
                 return dbEncoding;
             default:

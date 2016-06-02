@@ -60,15 +60,15 @@ public class Admin extends HttpServlet {
                     // Удаление данных
                     st.executeUpdate("delete from voshod.xodgol" +
                         " where vrntvd  in (select vrn from voshod.tvd" +
-                        " where vrnvibref=" + Settings.getProperty("VRNVIBREF") + ")");
+                        " where vrnvibref in (" + Settings.getProperty("VRNVIBREF") + "," + Settings.getProperty("VRNVIBREF2") + "," + Settings.getProperty("VRNVIBREF3") + "))");
                     st.executeUpdate("delete from voshod.xod_end " +
                         " where vrn  in (select vrn from voshod.tvd" +
-                        " where vrnvibref=" + Settings.getProperty("VRNVIBREF") + ")");
+                        " where vrnvibref in (" + Settings.getProperty("VRNVIBREF") + "," + Settings.getProperty("VRNVIBREF2") + "," + Settings.getProperty("VRNVIBREF3") + "))");
                     st.executeUpdate( "delete from voshod.pg where vrntvd in (select vrn from voshod.tvd" +
-                        " where vrnvibref=" + Settings.getProperty("VRNVIBREF") + ")" );
+                        " where vrnvibref in (" + Settings.getProperty("VRNVIBREF") + "," + Settings.getProperty("VRNVIBREF2") + "," + Settings.getProperty("VRNVIBREF3") + "))" );
                     st.executeUpdate("update voshod.tvd " +
                         " set prprot1=null, lastvrem=null" +
-                        " where vrnvibref=" + Settings.getProperty("VRNVIBREF") + "");
+                        " where vrnvibref in (" + Settings.getProperty("VRNVIBREF") + "," + Settings.getProperty("VRNVIBREF2") + "," + Settings.getProperty("VRNVIBREF3") + ")");
                     st.executeUpdate("delete from voshod.document_signers");
                     st.executeUpdate("delete from voshod.documents");
                     st.executeUpdate("COMMIT");
