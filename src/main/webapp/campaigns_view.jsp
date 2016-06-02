@@ -4,8 +4,8 @@
                     <h1 class="page_title"><%=i18n.getString("tikCampaignsList")%>:</h1>
                     <ul>
                         <li><div class="campaigns_icon"></div><a href="${pageContext.request.pathInfo}?vrnvibref=462401515484839">A Eleição "Candidato presidencial"</a></li>
-                        <li><div class="campaigns_icon"></div><a href="${pageContext.request.pathInfo}?vrnvibref=562401515484839">Eleição "Lista"</a></li>
-                        <li><div class="campaigns_icon"></div><a href="${pageContext.request.pathInfo}?vrnvibref=662401515484839">Eleição "Ratificação"</a></li>
+                        <li><div class="campaigns_icon"></div><a href="${pageContext.request.pathInfo}?vrnvibref=562401515484839">A Eleição "Lista"</a></li>
+                        <li><div class="campaigns_icon"></div><a href="${pageContext.request.pathInfo}?vrnvibref=662401515484839">A Eleição "Ratificação"</a></li>
                     </ul>
                 </div>
                 <!--

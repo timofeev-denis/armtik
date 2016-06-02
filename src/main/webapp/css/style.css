@@ -276,3 +276,16 @@ span.ui-dialog-title {
     margin-top: 100px;
     text-align: center;
 }
+.campaign_info {
+    float: left;
+    padding-top: 25px;
+}
+.campaign_info img {
+    padding-bottom: 40px;
+}
+.campaign_graphics {
+    float: left;
+}
+.clearfix {
+    clear: both;
+}

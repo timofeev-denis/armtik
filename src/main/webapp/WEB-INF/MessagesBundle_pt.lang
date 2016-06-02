@@ -137,7 +137,6 @@ tikVotingResults = Resultados da votação
 tikVotingProcess = Curso da votação
 tikTikProtocol = Acta final
 tikSummaryTable = Tabela de síntese
-tikTotalResults = Os resultados gerais
 tikDetails = Mais detalhes
 tikUIK = CEL
 tikTIK = CET
@@ -162,6 +161,7 @@ tikProcessedProtocols = Actas  <br /> processadas
 #
 # footer.jsp
 tikHoldingCampaign = Realização da campanha
+tikTotalResults = Os resultados gerais
 tikChangingCampaign = Mudança da campanha
 tikLoadingUIKData = Carregamento dos dados da CEL
 tikAdministration = Administração

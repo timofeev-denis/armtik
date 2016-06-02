@@ -137,7 +137,6 @@ tikVotingResults = Результаты голосования
 tikVotingProcess = Ход голосования
 tikTikProtocol = Итоговый протокол
 tikSummaryTable = Сводная таблица
-tikTotalResults = Общие результаты
 tikDetails = Подробно
 tikUIK = УИК
 tikTIK = ТИК
@@ -162,6 +161,7 @@ tikProcessedProtocols = Обработанные <br /> протоколы
 #
 # footer.jsp
 tikHoldingCampaign = Проведение кампании
+tikTotalResults = Общие результаты
 tikChangingCampaign = Смена кампании
 tikLoadingUIKData = Загрузка данных из УИК
 tikAdministration = Администрирование
