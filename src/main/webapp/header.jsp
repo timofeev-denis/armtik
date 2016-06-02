@@ -113,23 +113,24 @@
             vrnsved = "662401515484947";
         }
         isTIK = true;
-    } else {
     }
-
-
 
     //out.print(request.getSession().getAttribute("vrnvibref"));
-    try {
-        rs = st.executeQuery("select namvibor FROM voshod.viboryrefer WHERE vrn=" + vrnvibref);
-        rs.next();
-        electionName = rs.getString(1);
-        out.print( electionName );
-        rs.close();
-    } catch(SQLException ex) {
-        %>
-            console.error( "<%= ex.getMessage() %>");
-        <%
-    }
+            if ("/totalResults.jsp".equals(request.getServletPath())) {
+                out.print(i18n.getString("tikTotalResults"));
+            } else {
+                try {
+                    rs = st.executeQuery("select namvibor FROM voshod.viboryrefer WHERE vrn=" + vrnvibref);
+                    rs.next();
+                    electionName = rs.getString(1);
+                    out.print(electionName);
+                    rs.close();
+                } catch (SQLException ex) {
+                    %>
+                    console.error( "<%= ex.getMessage() %>");
+                    <%
+                }
+            }
 %>
 
             </div>
