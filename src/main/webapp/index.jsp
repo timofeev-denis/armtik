@@ -28,7 +28,11 @@
     <h3><%=i18n.getString("tikVotingResults")%></h3>
     <div style=" text-align: center;">
         <div style="width: 90%;display: inline-block;text-align: center;">
-            <canvas id="canvas" height="400" width="900"></canvas>
+
+            <div class="campaign_info"><img src="<%=campaignImg%>" width="200" height="200"><p>A Eleição </p><p>"<%=campaignTitle%>"</p></div>
+            <div class="campaign_graphics"><canvas id="canvas" height="400" width="700"></canvas></div>
+            <div class="clearfix"></div>
+
             <script>
                 /*
                 console.info("DB_HOST: <%= Settings.getProperty("DB_HOST").replace("\\", "\\\\") %> ");
@@ -454,79 +458,12 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
                 annotateLabel: "<" + "%=v3%>%" // угловая скобка отделена, т.к. вместе с % - это тэг jsp
                 //annotateLabel: "<" + "%=v2 + '  ' + v3%" + ">" // пример подсказки, содержащей значения двух переменных
             }
-            </script>
-            <div class="wrapper_center">
-                <div id="photos">
-                    <%
-                    for( Integer i = 0; i < 3; i++ ) {
-                        %>
-                        <div class="photo"><img src="img/<%= photos.get( photosOrder.get(i) - 1 ) %>"></div>
-                        <%
-                    }
-                    %>
-                        <span class="stretch"></span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <h3><%=i18n.getString("tikVotingProcess")%></h3>
-    <div style="text-align: center;">
-        <div style="width: 90%;display: inline-block;text-align: center;">
-            <canvas id="canvas_turnout" height="400" width="900"></canvas>
-            <script>
-            var barChartTurnoutData = {
-                labels : [<%= turnOutLabels %>],
-                datasets : [{
-                    fillColor : "rgba(151,187,205,0.5)",
-                    strokeColor : "rgba(151,187,205,0.8)",
-                    highlightFill : "rgba(151,187,205,0.75)",
-                    highlightStroke : "rgba(151,187,205,1)",
-                    data : [<%= turnOutData %>]
-                    }]
-            }
-
-            var turnoutOptions = {
-                animationSteps : 80,
-                canvasBorders : false,
-                canvasBordersWidth : 1,
-                canvasBordersColor : "#e0e0e0",
-                legend : false,
-                inGraphDataShow : true,
-                annotateDisplay : true,
-                graphTitleFontSize: 18,
-                scaleShowLabels : false,
-                inGraphDataFontFamily: "Helvetica, Tahoma, Arial",
-                inGraphDataFontSize: 28,
-                inGraphDataFontStyle: "bold",
-                inGraphDataYPosition: 1,
-                inGraphDataFontColor: "#4775a9",
-                inGraphDataTmpl: "<" + "%=v3%>%",
-                scaleFontSize: 12,
-                scaleFontStyle: "normal",
-                scaleFontFamily: "Verdana",
-                /* настройка всплывающей подсказки
-                v1 : title associated to the bar (= title of the data)
-                v2 : label associated to the data
-                v3 : data value
-                v4 : cumulated value for the group of bar
-                v5 : total value for the group of bar
-                v6 : percentage (=100*v3/v5)
-                (v7,v8) : (X,Y) coordinate of the top left corner of the bar
-                (v9,v10) : (X,Y) coordinate of the bottom right corner of the bar
-                v11 : position of the line
-                v12: position of the data in the series
-                 */
-                annotateLabel: "<" + "%=v3%>%" // угловая скобка отделена, т.к. вместе с % - это тэг jsp
-                //annotateLabel: "<" + "%=v2 + '  ' + v3%" + ">" // пример подсказки, содержащей значения двух переменных
-            }
 
             window.onload = function(){
                 var myBar1 = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartRealData, options);
-                var myBar3 = new Chart(document.getElementById("canvas_turnout").getContext("2d")).Bar(barChartTurnoutData, turnoutOptions);
             }
-            </script>
 
+            </script>
         </div>
     </div>
     <h3><%=i18n.getString("tikTikProtocol")%></h3>

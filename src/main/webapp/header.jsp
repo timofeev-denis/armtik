@@ -99,18 +99,26 @@
     String electionName = "";
     String vrntvd = "";
     String vrnsved = "";
+    String campaignImg = "";
+    String campaignTitle = "";
     vrntvd = request.getParameter("vrntvd");
     boolean isTIK = false;
     if( vrntvd == null ) {
         if(vrnvibref.equals("462401515484839")) {
             vrntvd = "462401515484844";
             vrnsved = "462401515484947";
+            campaignImg = "img/president.png";
+            campaignTitle = "Candidato presidencial";
         } else if(vrnvibref.equals("562401515484839")) {
             vrntvd = "562401515484844";
             vrnsved = "562401515484947";
+            campaignImg = "img/angola.png";
+            campaignTitle = "Lista";
         } else if(vrnvibref.equals("662401515484839")) {
             vrntvd = "662401515484844";
             vrnsved = "662401515484947";
+            campaignImg = "img/mpla.png";
+            campaignTitle = "Ratificação";
         }
         isTIK = true;
     }
