@@ -30,80 +30,112 @@
         <div style="width: 90%;display: inline-block;text-align: center;">
             <script>
                 <%
-                    String uikvrn1 = "462401515484945";
-                    String uikvrn2 = "462401515484946";
-                    String uikNumber = request.getParameter("uikNumber");
-                    if( uikNumber == null ) {
-                        pageContext.setAttribute("commissionName", i18n.getString("tikTIK") + " 71T026");
-                    } else {
-                        pageContext.setAttribute("commissionName", i18n.getString("tikUIK") + " №" + uikNumber);
+
+                String vrnvibref1 = "462401515484839";
+                String vrnvibref2 = "562401515484839";
+                String vrnvibref3 = "662401515484839";
+
+                String vrntvd1 = "462401515484844";
+                String vrntvd2 = "562401515484844";
+                String vrntvd3 = "662401515484844";
+
+                String uikvrn1 = "462401515484945";
+                String uikvrn2 = "462401515484946";
+                String uikNumber = request.getParameter("uikNumber");
+                if( uikNumber == null ) {
+                    pageContext.setAttribute("commissionName", i18n.getString("tikTIK") + " 71T026");
+                } else {
+                    pageContext.setAttribute("commissionName", i18n.getString("tikUIK") + " №" + uikNumber);
+                }
+                PersonsCollection persons = new PersonsCollection();
+                PersonsCollection persons2 = new PersonsCollection();
+                PersonsCollection persons3 = new PersonsCollection();
+
+                // Шаблон сводной таблицы
+                String summaryTableTemplate = "";
+                if(isTIK) {
+                    Path path =Paths.get(getServletContext().getRealPath("/html/SummaryTable_" + Settings.getProperty("LANGUAGE") + ".html"));
+                    List<String> summaryTableLines = Files.readAllLines(path, StandardCharsets.UTF_8);
+
+                    for( String s: summaryTableLines) {
+                        summaryTableTemplate += s;
                     }
-                    PersonsCollection persons = new PersonsCollection();
+                }
 
-                    // Шаблон сводной таблицы
-                    String summaryTableTemplate = "";
-                    if(isTIK) {
-                        Path path =Paths.get(getServletContext().getRealPath("/html/SummaryTable_" + Settings.getProperty("LANGUAGE") + ".html"));
-                        List<String> summaryTableLines = Files.readAllLines(path, StandardCharsets.UTF_8);
+                ArrayList<String> photos = new ArrayList<String>();
+                photos.add( "LuisMamonaJoaoLama.jpg" );
+                photos.add( "JoseLuisFrancisco.jpg" );
+                photos.add( "MassungunaAlexAfonso.jpg" );
+                photos.add( "SebastiaoArsenioCabungula.jpg" );
+                photos.add( "HermenegildodaCosta.jpg" );
+                photos.add( "AderitoWaldemarAlvesdeCarvalho.jpg" );
+                photos.add( "FelisbertoSebastiaodaGracaAmaral.jpg" );
+                photos.add( "CarlosManuelGoncalvesAlonso.jpg" );
+                photos.add( "RicardoJobEstevao.jpg" );
+                photos.add( "FernandoAgostinhodaCosta.jpg" );
 
-                        for( String s: summaryTableLines) {
-                            summaryTableTemplate += s;
-                        }
-                    }
-                %>
-                <%
-                    ArrayList<String> photos = new ArrayList<String>();
-                    photos.add( "LuisMamonaJoaoLama.jpg" );
-                    photos.add( "JoseLuisFrancisco.jpg" );
-                    photos.add( "MassungunaAlexAfonso.jpg" );
-                    photos.add( "SebastiaoArsenioCabungula.jpg" );
-                    photos.add( "HermenegildodaCosta.jpg" );
-                    photos.add( "AderitoWaldemarAlvesdeCarvalho.jpg" );
-                    photos.add( "FelisbertoSebastiaodaGracaAmaral.jpg" );
-                    photos.add( "CarlosManuelGoncalvesAlonso.jpg" );
-                    photos.add( "RicardoJobEstevao.jpg" );
-                    photos.add( "FernandoAgostinhodaCosta.jpg" );
-
-                    Class.forName("org.postgresql.Driver");
-                    try {
-                        st = conn.createStatement();
-                    } catch(SQLException ex) {
-                        %>
-                console.error( "Создание подключения: " + "<%= ex.getMessage() %>");
-                <%
-            }
-            // Результаты голосования
-            rs = null;
-            ArrayList<Integer> photosOrder = new ArrayList<Integer>();
-            try {
-
-                rs = st.executeQuery("select numsved, p.famil, p.imia, p.otch, kolza, p.photo "
-                        + "from voshod.pg_golosa g, voshod.pgb_sved s, voshod.uchvib u, voshod.persona p "
-                        + "where g.vrnsved=s.vrnsved "
-                        + "and katsv='1' "
-                        + "and u.vrn=s.numsvreestr "
-                        + "and u.vrnpersona=p.vrn "
-                        + "and g.vrn in (select vrn from voshod.pg where "
-                        + "vrntvd in (select vrn from voshod.tvd where vrnvibref=" + vrnvibref + " and vrn=" + vrntvd + ")"
-                        + "and numver=0) ORDER BY kolza DESC, numsved");
-                %>
-                console.log("select numsved, p.famil, p.imia, p.otch, kolza, p.photo "
-                        + "from voshod.pg_golosa g, voshod.pgb_sved s, voshod.uchvib u, voshod.persona p "
-                        + "where g.vrnsved=s.vrnsved "
-                        + "and katsv='1' "
-                        + "and u.vrn=s.numsvreestr "
-                        + "and u.vrnpersona=p.vrn "
-                        + "and g.vrn in (select vrn from voshod.pg where "
-                        + "vrntvd in (select vrn from voshod.tvd where vrnvibref=<%=vrnvibref%> and vrn=<%=vrntvd%>)"
-                        + "and numver=0) ORDER BY kolza DESC, numsved");
-                <%
-                while (rs.next()) {
-                    persons.addPerson(new Person(rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5)));
-                    photosOrder.add(rs.getInt(1));
+                Class.forName("org.postgresql.Driver");
+                try {
+                    st = conn.createStatement();
+                } catch(SQLException ex) {
                     %>
-                console.info( "Найден: <%= rs.getInt(1) %>" + " - " + "<%= rs.getString(2) + " " +  rs.getString(3) + " " +  rs.getString(4) %>" + "(<%= rs.getInt(5) %>)");
-                <%
+                console.error( "Создание подключения: " + "<%= ex.getMessage() %>");
+            <%
+        }
+        // Результаты голосования
+        rs = null;
+        int resultsCount;
+        boolean hasResults = false;
+        try {
+            resultsCount = 0;
+            rs = st.executeQuery("select numsved, p.famil, p.imia, p.otch, kolza, p.photo "
+                    + "from voshod.pg_golosa g, voshod.pgb_sved s, voshod.uchvib u, voshod.persona p "
+                    + "where g.vrnsved=s.vrnsved "
+                    + "and katsv='1' "
+                    + "and u.vrn=s.numsvreestr "
+                    + "and u.vrnpersona=p.vrn "
+                    + "and g.vrn in (select vrn from voshod.pg where "
+                    + "vrntvd in (select vrn from voshod.tvd where vrnvibref=" + vrnvibref1 + " and vrn=" + vrntvd1 + ")"
+                    + "and numver=0) ORDER BY kolza DESC, numsved");
+
+            while (rs.next()) {
+                persons.addPerson(new Person(rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5)));
+                resultsCount++;
             }
+            hasResults &= resultsCount > 0;
+
+            rs = st.executeQuery("select numsved, p.famil, p.imia, p.otch, kolza, p.photo "
+                    + "from voshod.pg_golosa g, voshod.pgb_sved s, voshod.uchvib u, voshod.persona p "
+                    + "where g.vrnsved=s.vrnsved "
+                    + "and katsv='1' "
+                    + "and u.vrn=s.numsvreestr "
+                    + "and u.vrnpersona=p.vrn "
+                    + "and g.vrn in (select vrn from voshod.pg where "
+                    + "vrntvd in (select vrn from voshod.tvd where vrnvibref=" + vrnvibref2 + " and vrn=" + vrntvd2 + ")"
+                    + "and numver=0) ORDER BY kolza DESC, numsved");
+
+            while (rs.next()) {
+                persons2.addPerson(new Person(rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5)));
+                resultsCount++;
+            }
+            hasResults &= resultsCount > 0;
+
+            rs = st.executeQuery("select numsved, p.famil, p.imia, p.otch, kolza, p.photo "
+                    + "from voshod.pg_golosa g, voshod.pgb_sved s, voshod.uchvib u, voshod.persona p "
+                    + "where g.vrnsved=s.vrnsved "
+                    + "and katsv='1' "
+                    + "and u.vrn=s.numsvreestr "
+                    + "and u.vrnpersona=p.vrn "
+                    + "and g.vrn in (select vrn from voshod.pg where "
+                    + "vrntvd in (select vrn from voshod.tvd where vrnvibref=" + vrnvibref3 + " and vrn=" + vrntvd3 + ")"
+                    + "and numver=0) ORDER BY kolza DESC, numsved");
+
+            while (rs.next()) {
+                persons3.addPerson(new Person(rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5)));
+                resultsCount++;
+            }
+            hasResults &= resultsCount > 0;
+
             rs.close();
         } catch(SQLException ex) {
             %>
@@ -111,7 +143,7 @@
                 <%
             }
             // Результаты голосования не найдены
-            if (photosOrder.size() == 0) {
+            if (!hasResults) {
                 %>
                 console.info( "Результаты голосования не найдены!" );
                 <%
@@ -119,17 +151,37 @@
                 try {
                     rs = st.executeQuery("select numsved, p.famil, p.imia, p.otch, p.photo "
                         + "from voshod.pgb_sved s, voshod.uchvib u, voshod.persona p "
-                        + "where u.vrnvibref = " + vrnvibref + " "
+                        + "where u.vrnvibref = " + vrnvibref1 + " "
                         + "and katsv='1' "
                         + "and u.vrn=s.numsvreestr "
                         + "and u.vrnpersona=p.vrn "
                         + "ORDER BY  numsved");
                     while (rs.next()) {
                         persons.addPerson(new Person(rs.getString(2), rs.getString(3), rs.getString(4), 0));
-                        photosOrder.add(rs.getInt(1));
-                        %>
-                console.info( "Найден: <%= rs.getInt(1) %>" + " - " + "<%= rs.getString(2) %>");
-                <%            }
+                    }
+
+                    rs = st.executeQuery("select numsved, p.famil, p.imia, p.otch, p.photo "
+                        + "from voshod.pgb_sved s, voshod.uchvib u, voshod.persona p "
+                        + "where u.vrnvibref = " + vrnvibref2 + " "
+                        + "and katsv='1' "
+                        + "and u.vrn=s.numsvreestr "
+                        + "and u.vrnpersona=p.vrn "
+                        + "ORDER BY  numsved");
+                    while (rs.next()) {
+                        persons2.addPerson(new Person(rs.getString(2), rs.getString(3), rs.getString(4), 0));
+                    }
+
+                    rs = st.executeQuery("select numsved, p.famil, p.imia, p.otch, p.photo "
+                        + "from voshod.pgb_sved s, voshod.uchvib u, voshod.persona p "
+                        + "where u.vrnvibref = " + vrnvibref3 + " "
+                        + "and katsv='1' "
+                        + "and u.vrn=s.numsvreestr "
+                        + "and u.vrnpersona=p.vrn "
+                        + "ORDER BY  numsved");
+                    while (rs.next()) {
+                        persons3.addPerson(new Person(rs.getString(2), rs.getString(3), rs.getString(4), 0));
+                    }
+
             rs.close();
         } catch(SQLException ex) {
             %>
@@ -367,8 +419,76 @@
                     }]
                 };
 
+                var barChartRealData2 = {
+                    labels : [<%= persons2.getLabels(0, 2) %>],
+                    datasets : [{
+                        fillColor : "rgba(151,187,205,0.5)",
+                        strokeColor : "rgba(151,187,205,0.8)",
+                        highlightFill : "rgba(151,187,205,0.75)",
+                        highlightStroke : "rgba(151,187,205,1)",
+                        data : [<%= persons2.getVotes(0, 2) %>]
+                    }]
+                };
+
+                var barChartRealData3 = {
+                    labels : [<%= persons3.getLabels(0, 2) %>],
+                    datasets : [{
+                        fillColor : "rgba(151,187,205,0.5)",
+                        strokeColor : "rgba(151,187,205,0.8)",
+                        highlightFill : "rgba(151,187,205,0.75)",
+                        highlightStroke : "rgba(151,187,205,1)",
+                        data : [<%= persons3.getVotes(0, 2) %>]
+                    }]
+                };
+
                 var options = {
                     graphMax: <%= persons.getBarMax() %>,
+                    animationSteps : 80,
+                    canvasBorders : false,
+                    canvasBordersWidth : 1,
+                    canvasBordersColor : "#e0e0e0",
+                    legend : false,
+                    inGraphDataShow : true,
+                    annotateDisplay : true,
+                    graphTitleFontSize: 18,
+                    scaleShowLabels : false,
+                    inGraphDataFontFamily: "Helvetica, Tahoma, Arial",
+                    inGraphDataFontSize: 28,
+                    inGraphDataFontStyle: "bold",
+                    inGraphDataYPosition: 1,
+                    inGraphDataFontColor: "#4775a9",
+                    inGraphDataTmpl: "<" + "%=v3%>%",
+                    scaleFontSize: 14,
+                    scaleFontStyle: "normal",
+                    scaleFontFamily: "Lucida Console, Monaco, monospace",
+                    annotateLabel: "<" + "%=v3%>%" // угловая скобка отделена, т.к. вместе с % - это тэг jsp
+                };
+
+                var options2 = {
+                    graphMax: <%= persons2.getBarMax() %>,
+                    animationSteps : 80,
+                    canvasBorders : false,
+                    canvasBordersWidth : 1,
+                    canvasBordersColor : "#e0e0e0",
+                    legend : false,
+                    inGraphDataShow : true,
+                    annotateDisplay : true,
+                    graphTitleFontSize: 18,
+                    scaleShowLabels : false,
+                    inGraphDataFontFamily: "Helvetica, Tahoma, Arial",
+                    inGraphDataFontSize: 28,
+                    inGraphDataFontStyle: "bold",
+                    inGraphDataYPosition: 1,
+                    inGraphDataFontColor: "#4775a9",
+                    inGraphDataTmpl: "<" + "%=v3%>%",
+                    scaleFontSize: 14,
+                    scaleFontStyle: "normal",
+                    scaleFontFamily: "Lucida Console, Monaco, monospace",
+                    annotateLabel: "<" + "%=v3%>%" // угловая скобка отделена, т.к. вместе с % - это тэг jsp
+                };
+
+                var options3 = {
+                    graphMax: <%= persons3.getBarMax() %>,
                     animationSteps : 80,
                     canvasBorders : false,
                     canvasBordersWidth : 1,
@@ -402,51 +522,12 @@
             <div class="campaign_info"><img src="img/mpla.png" width="200" height="200"><p><p>A Eleição </p><p>"Ratificação"</p></div>
             <div class="campaign_graphics"><canvas id="canvas3" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
-        </div>
-    </div>
-    <h3><%=i18n.getString("tikVotingProcess")%></h3>
-    <div style="text-align: center;">
-        <div style="width: 90%;display: inline-block;text-align: center;">
-            <canvas id="canvas_turnout" height="400" width="900"></canvas>
+
             <script>
-                var barChartTurnoutData = {
-                    labels : [<%= turnOutLabels %>],
-                    datasets : [{
-                        fillColor : "rgba(151,187,205,0.5)",
-                        strokeColor : "rgba(151,187,205,0.8)",
-                        highlightFill : "rgba(151,187,205,0.75)",
-                        highlightStroke : "rgba(151,187,205,1)",
-                        data : [<%= turnOutData %>]
-                    }]
-                };
-
-                var turnoutOptions = {
-                    animationSteps : 80,
-                    canvasBorders : false,
-                    canvasBordersWidth : 1,
-                    canvasBordersColor : "#e0e0e0",
-                    legend : false,
-                    inGraphDataShow : true,
-                    annotateDisplay : true,
-                    graphTitleFontSize: 18,
-                    scaleShowLabels : false,
-                    inGraphDataFontFamily: "Helvetica, Tahoma, Arial",
-                    inGraphDataFontSize: 28,
-                    inGraphDataFontStyle: "bold",
-                    inGraphDataYPosition: 1,
-                    inGraphDataFontColor: "#4775a9",
-                    inGraphDataTmpl: "<" + "%=v3%>%",
-                    scaleFontSize: 12,
-                    scaleFontStyle: "normal",
-                    scaleFontFamily: "Verdana",
-                    annotateLabel: "<" + "%=v3%>%" // угловая скобка отделена, т.к. вместе с % - это тэг jsp
-                };
-
                 window.onload = function(){
                     var myBar1 = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartRealData, options);
-                    var myBar2 = new Chart(document.getElementById("canvas2").getContext("2d")).Bar(barChartRealData, options);
-                    var myBar3 = new Chart(document.getElementById("canvas3").getContext("2d")).Bar(barChartRealData, options);
-                    var myBar4 = new Chart(document.getElementById("canvas_turnout").getContext("2d")).Bar(barChartTurnoutData, turnoutOptions);
+                    var myBar2 = new Chart(document.getElementById("canvas2").getContext("2d")).Bar(barChartRealData2, options2);
+                    var myBar3 = new Chart(document.getElementById("canvas3").getContext("2d")).Bar(barChartRealData3, options3);
                 }
             </script>
 
