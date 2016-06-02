@@ -132,10 +132,12 @@ tikReceivedMessages = Пришедшие сообщения
 # webapp
 #
 # index.jsp
+tikTitle = АРМ ТИК
 tikVotingResults = Результаты голосования
 tikVotingProcess = Ход голосования
 tikTikProtocol = Итоговый протокол
 tikSummaryTable = Сводная таблица
+tikTotalResults = Общие результаты
 tikDetails = Подробно
 tikUIK = УИК
 tikTIK = ТИК
@@ -178,4 +180,4 @@ tikPrint2 = Печать2
 tikViewMessage = Просмотр сообщения
 tikFormed = Сформирован
 tikFIO = ФИО
-tikSignatureIsValid = A assinatura é válida
+tikSignatureIsValid = Подпись действительна
