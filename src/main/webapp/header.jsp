@@ -112,12 +112,12 @@
         } else if(vrnvibref.equals("562401515484839")) {
             vrntvd = "562401515484844";
             vrnsved = "562401515484947";
-            campaignImg = "img/angola.png";
+            campaignImg = "img/mpla.png";
             campaignTitle = "Lista";
         } else if(vrnvibref.equals("662401515484839")) {
             vrntvd = "662401515484844";
             vrnsved = "662401515484947";
-            campaignImg = "img/mpla.png";
+            campaignImg = "img/angola.png";
             campaignTitle = "Ratificação";
         }
         isTIK = true;

@@ -43,7 +43,7 @@
                 String uikvrn2 = "462401515484946";
                 String uikNumber = request.getParameter("uikNumber");
                 if( uikNumber == null ) {
-                    pageContext.setAttribute("commissionName", i18n.getString("tikTIK") + " 71T026");
+                    pageContext.setAttribute("commissionName", i18n.getString("tikTitle"));
                 } else {
                     pageContext.setAttribute("commissionName", i18n.getString("tikUIK") + " №" + uikNumber);
                 }
@@ -515,11 +515,11 @@
             <div class="campaign_graphics"><canvas id="canvas" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
 
-            <div class="campaign_info"><img src="img/angola.png" width="200" height="200"><p><p>A Eleição </p><p>"Lista"</p></div>
+            <div class="campaign_info"><img src="img/mpla.png" width="200" height="200"><p><p>A Eleição </p><p>"Lista"</p></div>
             <div class="campaign_graphics"><canvas id="canvas2" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
 
-            <div class="campaign_info"><img src="img/mpla.png" width="200" height="200"><p><p>A Eleição </p><p>"Ratificação"</p></div>
+            <div class="campaign_info"><img src="img/angola.png" width="200" height="200"><p><p>A Eleição </p><p>"Ratificação"</p></div>
             <div class="campaign_graphics"><canvas id="canvas3" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
 

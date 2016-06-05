@@ -65,7 +65,7 @@ and vrnsved in (select vrnsved from voshod.pgb_sved where vrn=462401515484947 an
 
     String uikNumber = request.getParameter("uikNumber");
     if( uikNumber == null ) {
-        pageContext.setAttribute("commissionName", i18n.getString("tikTIK") + " 71T026");
+        pageContext.setAttribute("commissionName", i18n.getString("tikTitle"));
     } else {
         pageContext.setAttribute("commissionName", i18n.getString("tikUIK") + " №" + uikNumber);
     }

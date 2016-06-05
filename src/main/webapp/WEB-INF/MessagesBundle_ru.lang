@@ -132,7 +132,7 @@ tikReceivedMessages = Пришедшие сообщения
 # webapp
 #
 # index.jsp
-tikTitle = АРМ ТИК
+tikTitle = VII Съезд MPLA
 tikVotingResults = Результаты голосования
 tikVotingProcess = Ход голосования
 tikTikProtocol = Итоговый протокол
