@@ -519,7 +519,7 @@
             <div class="campaign_graphics"><canvas id="canvas2" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
 
-            <div class="campaign_info"><img src="img/angola.png" width="200" height="200"><p><p>A Eleição </p><p>"Ratificação"</p></div>
+            <div class="campaign_info"><img src="img/mpla_flag.png" width="200" height="200"><p><p>A Eleição </p><p>"Ratificação"</p></div>
             <div class="campaign_graphics"><canvas id="canvas3" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
 

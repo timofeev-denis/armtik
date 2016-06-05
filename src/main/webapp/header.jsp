@@ -117,7 +117,7 @@
         } else if(vrnvibref.equals("662401515484839")) {
             vrntvd = "662401515484844";
             vrnsved = "662401515484947";
-            campaignImg = "img/angola.png";
+            campaignImg = "img/mpla_flag.png";
             campaignTitle = "Ratificação";
         }
         isTIK = true;
