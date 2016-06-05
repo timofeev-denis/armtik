@@ -511,15 +511,15 @@
                 };
             </script>
 
-            <div class="campaign_info"><img src="img/president.png" width="200" height="200"><p>A Eleição </p><p>"Candidato presidencial"</p></div>
+            <div class="campaign_info"><img src="img/president.png" width="200" height="200"><p>Eleição para o cargo de Presidente do Partido</p></div>
             <div class="campaign_graphics"><canvas id="canvas" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
 
-            <div class="campaign_info"><img src="img/mpla.png" width="200" height="200"><p><p>A Eleição </p><p>"Lista"</p></div>
+            <div class="campaign_info"><img src="img/mpla.png" width="200" height="200"><p>Eleição dos Candidatos ao Comitê Central</p></div>
             <div class="campaign_graphics"><canvas id="canvas2" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
 
-            <div class="campaign_info"><img src="img/mpla_flag.png" width="200" height="200"><p><p>A Eleição </p><p>"Ratificação"</p></div>
+            <div class="campaign_info"><img src="img/mpla_flag.png" width="200" height="200"><p>Ratificação dos Candidatos Eleitos nas Conferências Provinciais</p></div>
             <div class="campaign_graphics"><canvas id="canvas3" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
 

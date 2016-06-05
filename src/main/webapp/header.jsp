@@ -108,17 +108,17 @@
             vrntvd = "462401515484844";
             vrnsved = "462401515484947";
             campaignImg = "img/president.png";
-            campaignTitle = "Candidato presidencial";
+            campaignTitle = "Eleição para o cargo de Presidente do Partido";
         } else if(vrnvibref.equals("562401515484839")) {
             vrntvd = "562401515484844";
             vrnsved = "562401515484947";
             campaignImg = "img/mpla.png";
-            campaignTitle = "Lista";
+            campaignTitle = "Eleição dos Candidatos ao Comitê Central";
         } else if(vrnvibref.equals("662401515484839")) {
             vrntvd = "662401515484844";
             vrnsved = "662401515484947";
             campaignImg = "img/mpla_flag.png";
-            campaignTitle = "Ratificação";
+            campaignTitle = "Ratificação dos Candidatos Eleitos nas Conferências Provinciais";
         }
         isTIK = true;
     }
