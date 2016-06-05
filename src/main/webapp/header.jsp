@@ -101,6 +101,7 @@
     String vrnsved = "";
     String campaignImg = "";
     String campaignTitle = "";
+    String positionTitle = "";
     vrntvd = request.getParameter("vrntvd");
     boolean isTIK = false;
     if( vrntvd == null ) {
@@ -109,16 +110,19 @@
             vrnsved = "462401515484947";
             campaignImg = "img/president.png";
             campaignTitle = "Eleição para o cargo de Presidente do Partido";
+            positionTitle = "José Eduardo dos Santos";
         } else if(vrnvibref.equals("562401515484839")) {
             vrntvd = "562401515484844";
             vrnsved = "562401515484947";
             campaignImg = "img/mpla.png";
             campaignTitle = "Eleição dos Candidatos ao Comitê Central";
+            positionTitle = "Eleição da Lista";
         } else if(vrnvibref.equals("662401515484839")) {
             vrntvd = "662401515484844";
             vrnsved = "662401515484947";
             campaignImg = "img/mpla_flag.png";
             campaignTitle = "Ratificação dos Candidatos Eleitos nas Conferências Provinciais";
+            positionTitle = "Ratificação da Lista";
         }
         isTIK = true;
     }

@@ -29,7 +29,7 @@
     <div style=" text-align: center;">
         <div style="width: 90%;display: inline-block;text-align: center;">
 
-            <div class="campaign_info"><img src="<%=campaignImg%>" width="200" height="200"><p><%=campaignTitle%></p></div>
+            <div class="campaign_info"><img src="<%=campaignImg%>" width="200" height="200"><p><%=positionTitle%></p></div>
             <div class="campaign_graphics"><canvas id="canvas" height="400" width="700"></canvas></div>
             <div class="clearfix"></div>
 
